@@ -1,0 +1,24 @@
+<br><br><br><br>
+<a href="/">돌아가기</a>
+
+<%=form_for @post do |post_form|%>
+  <div class="form-group">
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">제목</span>
+      <%= post_form.text_field :title, class: 'form-control', placeholder: '제목을 입력해주세요'%>
+    </div>
+    <br><br>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">내용</span>
+        <%= post_form.text_area :content, class: 'form-control', placeholder: '내용을 입력해주세요'%>
+    </div>    
+
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <%= post_form.file_field :image %>
+  </div>
+
+
+    <br><br><%= post_form.submit "등록", class: 'btn btn-default'%>
+
+<%end%>

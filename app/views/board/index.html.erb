@@ -1,0 +1,13 @@
+<br><br><br>
+
+<a href="/board/posts/new">post생성</a>
+<% if @posts.present?%>
+    <%@posts.each do |post| %>
+        <h4><%=post.title%></h4>
+        <h4><%=post.user%></h4>
+        <br>
+        <h5><%=post.content%></h5>
+    <% end%>
+<% else %>
+    <h4>게시글이 없습니다</h4>
+<%end %>

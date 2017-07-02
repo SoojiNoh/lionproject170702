@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'board/index'
+  
+  scope '/board' do
+    resources :posts do
+      resources :comments
+    end
+  end
+  
+  get 'board' => 'board#index'
 
   get 'home/index'
 
