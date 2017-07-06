@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+
   
   scope '/board' do
     resources :posts do
@@ -8,9 +8,17 @@ Rails.application.routes.draw do
   end
   
   get 'board' => 'board#index'
+
+  devise_for :users , controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
+  }
+
   get 'home/index'
 
   get 'board/index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

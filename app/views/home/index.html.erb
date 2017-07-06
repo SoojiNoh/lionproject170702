@@ -13,7 +13,14 @@
 								 <div class="carousel-caption">
 									<p>Women of Virtue</p>
 									<div class="btn_bg">
-										<a href="" class="btn ">LOG IN</a>
+										<% if user_signed_in? %>
+											<%=link_to "LOG IN", new_user_session_path, {class: "btn"} %>
+											<br><br><br><br>
+											<%#=link_to "SIGN IN", new_user_registration_path, {class: "btn"} %>
+										<% else %>
+											<%=link_to "LOG OUT", destroy_user_session_path, {class: "btn"} %>
+										<% end %>
+										<!--<a href="" class="btn ">LOG IN</a>-->
 									</div>
 								</div>
 								<img src="assets/images/slider.jpg" alt="...">
