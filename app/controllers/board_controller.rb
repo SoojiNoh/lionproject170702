@@ -1,7 +1,7 @@
 class BoardController < ApplicationController
   before_action :set_post, only: [:show_post, :edit_post, :update_post, :destroy_post]
   before_action :set_comment, only: [:edit_comment, :update_comment, :destroy_comment]
-  
+  before_filter :authenticate_user!
 
   def index
     @posts = Post.all

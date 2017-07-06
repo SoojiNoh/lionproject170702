@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
       before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /posts
   # GET /posts.json
@@ -30,7 +31,7 @@ class PostsController < ApplicationController
     @post.user = current_user
       respond_to do |format|
       if @post.save
-        format.html { redirect_to '/board', notice: '게시물이 성공적으로 등록되었습니다.' }
+        format.html { redirect_to '/board/posts', notice: '게시물이 성공적으로 등록되었습니다.' }
         # format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }

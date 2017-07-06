@@ -1,0 +1,9 @@
+<br><br><br><br>
+<% @posts.each do |post| %>
+    분류: <%=post.category %>
+    제목: <%=post.title %>
+    내용: <%=post.content %>
+<% end %>
+
+<%=link_to "새로운 글쓰기", new_post_path %>
+qwegqweg
