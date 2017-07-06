@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   end
   
   get 'board' => 'board#index'
-
   get 'home/index'
 
   get 'board/index'
