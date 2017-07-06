@@ -1,12 +1,31 @@
-<div class="form">
-  <div class="username">
-    <input type="text" placeholder="USERNAME"/>
-  </div>
-  <div class="password">
-    <input type="text" placeholder="PASSWORD"/>
-  </div>
-  <div class="login">
-    <span>log in</span>
-  </div>
+<br>
+<br>
+<br>
+<br>
+<div class="signin">
+  <h2>Sign in</h2>
 </div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <div class="email">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="password">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <div class="login">
+      <%= f.submit "Log in" %>
+    </div>
+  </div>
+<% end %>
+<%= render "users/shared/links" %>
+
 

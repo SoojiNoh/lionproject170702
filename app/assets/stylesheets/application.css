@@ -8,7 +8,7 @@
 
 .form {
   height: 18.75em;
-  width: 25em;
+  width: 40em;
   background: #fff;
   position: absolute;
   top: 50%;
@@ -24,11 +24,11 @@
   width: 100%;
 }
 
-.username {
+.email, .Email {
   background-color: #4daf7c;
 }
 
-.username::after {
+.email::after, .Email::after {
   content: "";
   width: 0px;
   height: 0px;
@@ -41,11 +41,15 @@
   margin-left: -0.496em;
 }
 
-.password {
+.password, .Password{
   background-color: #404241;
 }
 
-.password::after {
+.Password_confirmation{
+  background-color: grey;
+}
+
+.password::after, .Password::after, .Password_confirmation::after {
   content: "";
   width: 0px;
   height: 0px;
@@ -58,12 +62,12 @@
   margin-left: -0.496em;
 }
 
-.login {
+.login, .Sign_up {
   background-color: #e9c85d;
   display: table;
 }
 
-.login span {
+.login span, .Sign_up span {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
@@ -73,8 +77,8 @@
 
 input {
   height: 6.25em;
-  width: 25em;
-  font-size: 3em;
+  width: 105em;
+  font-size: 15em;
   text-align:center;
   border: 0;
   outline: 0;
@@ -84,7 +88,10 @@ input {
   margin-top: 1em;
   border:0.033em #fff solid;
   font-family: "Bebas Neue", Arial;
+}
 
+.signin, .signup{
+  text-align :center;
 }
 
 ::placeholder {
